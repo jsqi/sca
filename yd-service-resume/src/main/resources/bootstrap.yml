@@ -1,21 +1,11 @@
 spring:
   cloud:
-    config:
-      name: yd-service-resume # 配置文件名称
-      profile: dev #后缀名称
-      label: master #分支名称
-      uri: http://localhost:9006 # 配置中心服务端地址
-  rabbitmq:
-    port: 5672
-    username: admin
-    password: admin
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
-    restart:
-      enabled: true
+    nacos:
+      config:
+        server-addr: 39.97.254.44:8848
+        namespace: 5d59a7d2-a9e1-4c17-bef9-b6f99cbb2db5
+        group: DEFAULT_GROUP
+        file-extension: yml
+        refresh-enabled: true
+  profiles:
+    active: dev

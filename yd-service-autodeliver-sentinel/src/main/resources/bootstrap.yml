@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.97.254.44:8848
+        username: nacos
+        password: nacos
+        namespace: 5d59a7d2-a9e1-4c17-bef9-b6f99cbb2db5
+      config:
+        server-addr: 39.97.254.44:8848
+        namespace: 5d59a7d2-a9e1-4c17-bef9-b6f99cbb2db5
+        group: DEFAULT_GROUP
+        file-extension: yml
+        refresh-enabled: true
+    sentinel:
+      transport:
+        dashboard: localhost:9999
+        port: 8719
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

@@ -3,13 +3,6 @@ server:
 spring:
   application:
     name: yd-service-autodeliver
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 39.97.254.44:8848
-        username: nacos
-        password: nacos
-        namespace: 5d59a7d2-a9e1-4c17-bef9-b6f99cbb2db5
 
 yd-service-resume:
   ribbon:
@@ -29,5 +22,11 @@ yd-service-resume:
 ## 开启Feign的熔断功能
 feign:
   hystrix:
+    enabled: false
+  sentinel:
     enabled: true
+
+logging:
+  level:
+    com.jxsj.feign.ResumeFeignClient: debug
 
