@@ -1,0 +1,25 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/monkSweeping/scn-config-repo.git
+          username: ${username}
+          password: ${password}
+          search-paths:
+            - scn-config-repo
+        default-label: master
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
